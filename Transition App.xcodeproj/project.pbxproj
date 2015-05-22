@@ -14,6 +14,7 @@
 		C54D982B1B0FA9FA00282DC5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C54D982A1B0FA9FA00282DC5 /* Images.xcassets */; };
 		C54D982E1B0FA9FA00282DC5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C54D982C1B0FA9FA00282DC5 /* LaunchScreen.xib */; };
 		C54D983A1B0FA9FA00282DC5 /* Transition_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C54D98391B0FA9FA00282DC5 /* Transition_AppTests.m */; };
+		C54D98441B0FAAF200282DC5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C54D98431B0FAAF200282DC5 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		C54D98331B0FA9FA00282DC5 /* Transition AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Transition AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C54D98381B0FA9FA00282DC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C54D98391B0FA9FA00282DC5 /* Transition_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Transition_AppTests.m; sourceTree = "<group>"; };
+		C54D98431B0FAAF200282DC5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C54D98441B0FAAF200282DC5 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +66,7 @@
 		C54D98111B0FA9FA00282DC5 = {
 			isa = PBXGroup;
 			children = (
+				C54D98431B0FAAF200282DC5 /* MapKit.framework */,
 				C54D981C1B0FA9FA00282DC5 /* Transition App */,
 				C54D98361B0FA9FA00282DC5 /* Transition AppTests */,
 				C54D981B1B0FA9FA00282DC5 /* Products */,
