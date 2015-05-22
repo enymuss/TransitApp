@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Segment.h"
 
 @interface Route : NSObject
 

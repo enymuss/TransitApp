@@ -12,7 +12,7 @@
 
 @property (nonatomic) NSString* name;
 @property (nonatomic) NSNumber* numberStops;
-@property (nonatomic) NSDictionary* stops;
+@property (nonatomic) NSMutableArray* stops;
 @property (nonatomic) NSString* travelMode;
 @property (nonatomic) NSString* segmentDescription;
 @property (nonatomic) NSString* color;

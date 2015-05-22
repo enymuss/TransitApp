@@ -8,13 +8,13 @@
 
 #import "RouteParser.h"
 #import "Route.h"
+#import "Segment.h"
+#import "Stops.h"
 
 @implementation RouteParser
 
 - (Route *)routeFromJSONData:(NSData *)jsonData {
     id json = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
-//    NSLog(@"%@", json);
-    
     
     NSMutableArray *routes = [NSMutableArray new];
     
@@ -25,7 +25,7 @@
         route.properties = routeDict[@"properties"];
         route.price = routeDict[@"price"];
         
-        NSMutableArray *multiSegments = [NSMutableArray new];
+        NSMutableArray *segmentsArray = [NSMutableArray new];
         for (NSDictionary *segmentsDict in routeDict[@"segments"]) {
             Segment *segment = [Segment new];
             
@@ -38,13 +38,24 @@
             segment.iconURL = segmentsDict[@"icon_url"];
             segment.polyline = segmentsDict[@"polyline"];
             
-            
-            [multiSegments addObject:segment];
+            NSMutableArray *stopsArray = [NSMutableArray new];
+            for (NSDictionary *stopsDict in segmentsDict[@"stops"]) {
+                Stops *stop = [Stops new];
+                
+                stop.lat = stopsDict[@"lat"];
+                stop.lng = stopsDict[@"lng"];
+                stop.dateTime = stopsDict[@"datetime"];
+                stop.name = stopsDict[@"name"];
+                stop.properties = stopsDict[@"properties"];
+                
+                [stopsArray addObject:stop];
+            }
+            segment.stops = stopsArray;
+            [segmentsArray addObject:segment];
         }
-        route.segments = multiSegments;
+        route.segments = segmentsArray;
         [routes addObject:route];
     }
-    NSLog(@"%@", [[[[routes firstObject] segments] firstObject] travelMode]);
     
     return routes[0];
 }

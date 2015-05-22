@@ -12,7 +12,7 @@
 
 @property (nonatomic) NSNumber* lat;
 @property (nonatomic) NSNumber* lng;
-@property (nonatomic) NSString* datetime;
+@property (nonatomic) NSString* dateTime;
 @property (nonatomic) NSString* name;
 @property (nonatomic) id properties;
 

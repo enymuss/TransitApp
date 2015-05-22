@@ -16,10 +16,7 @@
 		C54D983A1B0FA9FA00282DC5 /* Transition_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C54D98391B0FA9FA00282DC5 /* Transition_AppTests.m */; };
 		C54D98441B0FAAF200282DC5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C54D98431B0FAAF200282DC5 /* MapKit.framework */; };
 		C54D98471B0FB58600282DC5 /* RouteParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C54D98461B0FB58600282DC5 /* RouteParser.m */; };
-		C54D984A1B0FB5AE00282DC5 /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = C54D98491B0FB5AE00282DC5 /* Route.m */; };
 		C54D984C1B0FB8E100282DC5 /* RouteParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C54D984B1B0FB8E100282DC5 /* RouteParserTests.m */; };
-		C54D984F1B0FBB7300282DC5 /* Segment.m in Sources */ = {isa = PBXBuildFile; fileRef = C54D984E1B0FBB7300282DC5 /* Segment.m */; };
-		C54D98521B0FBE0C00282DC5 /* Stops.m in Sources */ = {isa = PBXBuildFile; fileRef = C54D98511B0FBE0C00282DC5 /* Stops.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,12 +47,9 @@
 		C54D98451B0FB58600282DC5 /* RouteParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteParser.h; sourceTree = "<group>"; };
 		C54D98461B0FB58600282DC5 /* RouteParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteParser.m; sourceTree = "<group>"; };
 		C54D98481B0FB5AE00282DC5 /* Route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Route.h; sourceTree = "<group>"; };
-		C54D98491B0FB5AE00282DC5 /* Route.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Route.m; sourceTree = "<group>"; };
 		C54D984B1B0FB8E100282DC5 /* RouteParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteParserTests.m; sourceTree = "<group>"; };
 		C54D984D1B0FBB7300282DC5 /* Segment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Segment.h; sourceTree = "<group>"; };
-		C54D984E1B0FBB7300282DC5 /* Segment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Segment.m; sourceTree = "<group>"; };
 		C54D98501B0FBE0C00282DC5 /* Stops.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stops.h; sourceTree = "<group>"; };
-		C54D98511B0FBE0C00282DC5 /* Stops.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stops.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,11 +97,8 @@
 				C54D98451B0FB58600282DC5 /* RouteParser.h */,
 				C54D98461B0FB58600282DC5 /* RouteParser.m */,
 				C54D98481B0FB5AE00282DC5 /* Route.h */,
-				C54D98491B0FB5AE00282DC5 /* Route.m */,
 				C54D984D1B0FBB7300282DC5 /* Segment.h */,
-				C54D984E1B0FBB7300282DC5 /* Segment.m */,
 				C54D98501B0FBE0C00282DC5 /* Stops.h */,
-				C54D98511B0FBE0C00282DC5 /* Stops.m */,
 				C54D98221B0FA9FA00282DC5 /* AppDelegate.m */,
 				C54D98241B0FA9FA00282DC5 /* ViewController.h */,
 				C54D98251B0FA9FA00282DC5 /* ViewController.m */,
@@ -246,13 +237,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C54D984A1B0FB5AE00282DC5 /* Route.m in Sources */,
 				C54D98471B0FB58600282DC5 /* RouteParser.m in Sources */,
-				C54D98521B0FBE0C00282DC5 /* Stops.m in Sources */,
 				C54D98261B0FA9FA00282DC5 /* ViewController.m in Sources */,
 				C54D98231B0FA9FA00282DC5 /* AppDelegate.m in Sources */,
 				C54D98201B0FA9FA00282DC5 /* main.m in Sources */,
-				C54D984F1B0FBB7300282DC5 /* Segment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +436,7 @@
 				C54D983F1B0FA9FA00282DC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C54D98401B0FA9FA00282DC5 /* Build configuration list for PBXNativeTarget "Transition AppTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +445,7 @@
 				C54D98421B0FA9FA00282DC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
