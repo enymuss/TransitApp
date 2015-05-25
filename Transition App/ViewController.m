@@ -29,10 +29,10 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     CLLocationCoordinate2D zoomlocation;
-    zoomlocation.latitude = 52;
-    zoomlocation.longitude = 15;
+    zoomlocation.latitude = 52.519978;
+    zoomlocation.longitude = 13.401341;
     
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomlocation, METERS_PER_MILE, METERS_PER_MILE);
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomlocation, 3*METERS_PER_MILE, 3*METERS_PER_MILE);
     
     [self.mapView setRegion:viewRegion animated:YES];
     NSString *URLString = @"https://gist.githubusercontent.com/sdoward/d1fc5662b6497a04a3c3/raw/484128fab9d10ab2b9ec320f7aece2f2fb099052/Allryder%20Response";
@@ -56,11 +56,32 @@
                 
                 Locations *annotation = [[Locations alloc] initWithName:stop.name address:nil coordinate:coordinate];
                 
+                annotation.pinColor = MKPinAnnotationColorGreen;
+                
                 [_mapView addAnnotation:annotation];
             }
         }
     }
     
+}
+
+-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    static NSString *identifier = @"Stop";
+    if ([annotation isKindOfClass:[Locations class]]) {
+        MKPinAnnotationView *annotationView = (MKPinAnnotationView *) [_mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+        
+        if (annotationView == nil) {
+            annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+            annotationView.enabled = YES;
+            annotationView.canShowCallout = YES;
+            annotationView.pinColor = MKPinAnnotationColorGreen;
+            
+        } else {
+            annotationView.annotation = annotation;
+        }
+        return annotationView;
+    }
+    return nil;
 }
 
 - (void)didReceiveMemoryWarning {

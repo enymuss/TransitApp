@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 
-@interface Locations : NSObject <MKAnnotation>
+@interface Locations : MKPinAnnotationView <MKAnnotation>
 
 - (id)initWithName:(NSString *)name address:(NSString *)address coordinate:(CLLocationCoordinate2D)coordinate;
 - (MKMapItem *)mapItem;
