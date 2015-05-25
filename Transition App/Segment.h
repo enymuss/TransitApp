@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class Route;
+
 @interface Segment : NSObject
 
 @property (nonatomic) NSString* name;
@@ -19,5 +21,5 @@
 @property (nonatomic) NSString* iconURL;
 @property (nonatomic) NSString* polyline;
 
-
+-(NSArray *) segmentsFromRoute:(Route *) route;
 @end

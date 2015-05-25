@@ -13,7 +13,7 @@
 
 @implementation RouteParser
 
-- (Route *)routeFromJSONData:(NSData *)jsonData {
+- (NSArray *)routeFromJSONData:(NSData *)jsonData {
     id json = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
     
     NSMutableArray *routes = [NSMutableArray new];
@@ -57,7 +57,7 @@
         [routes addObject:route];
     }
     
-    return routes[0];
+    return routes;
 }
 
 @end

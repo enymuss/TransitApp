@@ -12,6 +12,6 @@
 
 @interface RouteParser : NSObject
 
-- (Route *)routeFromJSONData:(NSData *)jsonData;
+- (NSArray *)routeFromJSONData:(NSData *)jsonData;
 
 @end
