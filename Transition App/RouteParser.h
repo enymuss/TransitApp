@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@class Route;
+#import "Route.h"
+#import "Segment.h"
+#import "Stop.h"
 
 @interface RouteParser : NSObject
 
-- (NSArray *)routeFromJSONData:(NSData *)jsonData;
+- (NSArray *)routeFromJSONData:(NSData *)JSONData;
 
 @end

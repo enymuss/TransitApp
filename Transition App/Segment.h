@@ -7,20 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Route.h"
 
 @class Route;
 
 @interface Segment : NSObject
 
-@property (nonatomic) NSString* name;
-@property (nonatomic) NSNumber* numberStops;
-@property (nonatomic) NSMutableArray* stops;
-@property (nonatomic) NSString* travelMode;
-@property (nonatomic) NSString* segmentDescription;
-@property (nonatomic) NSString* color;
-@property (nonatomic) NSString* iconURL;
-@property (nonatomic) NSString* polyline;
+@property (nonatomic) NSString *name;
+@property (nonatomic) NSNumber *numberStops;
+@property (nonatomic) NSMutableArray *stops;
+@property (nonatomic) NSString *travelMode;
+@property (nonatomic) NSString *segmentDescription;
+@property (nonatomic) NSString *color;
+@property (nonatomic) NSString *iconURL;
+@property (nonatomic) NSString *polyline;
 
--(id) initWithDictionary:(NSDictionary *)dict;
+- (id)initWithDictionary:(NSDictionary *)dict;
 
 @end

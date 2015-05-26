@@ -11,7 +11,8 @@
 @implementation Stop
 
 -(id)initWithName:(NSString *)name dateTime:(NSString *)date coordinate:(CLLocationCoordinate2D)coordinate {
-    if ((self = [super init])) {
+    self = [super init];
+    if (self) {
         if ([name isKindOfClass:[NSString class]]) {
             self.name = name;
         } else {

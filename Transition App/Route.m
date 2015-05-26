@@ -10,7 +10,7 @@
 
 @implementation Route
 
--(TrsansportationType)assignTransportationTypeFromString:(NSString *)string{
+- (TrsansportationType)assignTransportationTypeFromString:(NSString *)string{
     TrsansportationType type;
     if ([string isEqualToString:@"public_transport"]) {
         type = PUBLIC_TRANSPORT;

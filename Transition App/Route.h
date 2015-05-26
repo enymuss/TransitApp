@@ -20,11 +20,11 @@ typedef NS_ENUM(NSUInteger, TrsansportationType) {
 };
 
 @property (nonatomic) TrsansportationType transportType;
-@property (nonatomic) NSString* provider;
-@property (nonatomic) NSMutableArray* segments;
-@property (nonatomic) NSDictionary* properties;
-@property (nonatomic) NSDictionary* price;
+@property (nonatomic) NSString *provider;
+@property (nonatomic) NSMutableArray *segments;
+@property (nonatomic) NSDictionary *properties;
+@property (nonatomic) NSDictionary *price;
 
--(TrsansportationType) assignTransportationTypeFromString:(NSString *)string;
+- (TrsansportationType)assignTransportationTypeFromString:(NSString *)string;
 
 @end

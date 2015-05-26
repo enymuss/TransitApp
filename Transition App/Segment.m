@@ -7,12 +7,12 @@
 //
 
 #import "Segment.h"
-#import "Route.h"
 
 @implementation Segment
 
 -(id)initWithDictionary:(NSDictionary *)dict {
-    if ((self = [super init])) {
+    self = [super init];
+    if (self) {
         self.name = dict[@"name"];
         self.numberStops = dict[@"num_stops"];
         self.stops = dict[@"stops"];

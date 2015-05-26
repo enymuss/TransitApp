@@ -7,43 +7,39 @@
 //
 
 #import "RouteParser.h"
-#import "Route.h"
-#import "Segment.h"
-#import "Stop.h"
 
 @implementation RouteParser
 
-- (NSArray *)routeFromJSONData:(NSData *)jsonData {
-    id json = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
+- (NSArray *)routeFromJSONData:(NSData *)JSONData {
+    id JSON = [NSJSONSerialization JSONObjectWithData:JSONData options:0 error:nil];
     
     NSMutableArray *routes = [NSMutableArray new];
     
-    for (NSDictionary *routeDict in json[@"routes"]) {
+    for (NSDictionary *routeDictionary in JSON[@"routes"]) {
         Route *route = [Route new];
-        route.transportType = [route assignTransportationTypeFromString:routeDict[@"type"]];
-        route.provider = routeDict[@"provider"];
-        route.properties = routeDict[@"properties"];
-        route.price = routeDict[@"price"];
+        route.transportType = [route assignTransportationTypeFromString:routeDictionary[@"type"]];
+        route.provider = routeDictionary[@"provider"];
+        route.properties = routeDictionary[@"properties"];
+        route.price = routeDictionary[@"price"];
         
         NSMutableArray *segmentsArray = [NSMutableArray new];
-        for (NSDictionary *segmentsDict in routeDict[@"segments"]) {
-            Segment *segment = [[Segment alloc] initWithDictionary:segmentsDict];
+        for (NSDictionary *segmentsDictionary in routeDictionary[@"segments"]) {
+            Segment *segment = [[Segment alloc] initWithDictionary:segmentsDictionary];
             
             NSMutableArray *stopsArray = [NSMutableArray new];
-            for (NSDictionary *stopsDict in segmentsDict[@"stops"]) {
-                NSString *name = stopsDict[@"name"];
-                NSString *date = stopsDict[@"datetime"];
+            for (NSDictionary *stopsDictionary in segmentsDictionary[@"stops"]) {
+                NSString *name = stopsDictionary[@"name"];
+                NSString *date = stopsDictionary[@"datetime"];
                 
-                NSNumber* lat = stopsDict[@"lat"];
-                NSNumber* lng = stopsDict[@"lng"];
                 CLLocationCoordinate2D coordinate;
+                NSNumber *lat = stopsDictionary[@"lat"];
+                NSNumber *lng = stopsDictionary[@"lng"];
                 coordinate.latitude = lat.doubleValue;
                 coordinate.longitude = lng.doubleValue;
                 
                 Stop *stop = [[Stop alloc] initWithName:name dateTime:date coordinate:coordinate];
                 
-                stop.properties = stopsDict[@"properties"];
-                stop.route = route;
+                stop.properties = stopsDictionary[@"properties"];
                 
                 [stopsArray addObject:stop];
             }

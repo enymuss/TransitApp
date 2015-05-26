@@ -10,19 +10,20 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface ViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
+@interface ViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UIAlertViewDelegate>
 
-@property (weak, nonatomic) IBOutlet MKMapView* mapView;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
-- (IBAction)publicTransportClicked:(id)sender;
-- (IBAction)bikeSharingClicked:(id)sender;
-- (IBAction)privateBikeClicked:(id)sender;
-- (IBAction)taxiClicked:(id)sender;
-- (IBAction)carSharingClicked:(id)sender;
-- (IBAction)allClicked:(id)sender;
+- (IBAction)allTapped:(id)sender;
+- (IBAction)publicTransportTapped:(id)sender;
+- (IBAction)bikeSharingTapped:(id)sender;
+- (IBAction)privateBikeTapped:(id)sender;
+- (IBAction)taxiTapped:(id)sender;
+- (IBAction)carSharingTapped:(id)sender;
 
-- (IBAction)currentLoctationClicked:(id)sender;
+- (IBAction)currentLoctationTapped:(id)sender;
 
 
 @end

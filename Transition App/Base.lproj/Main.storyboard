@@ -33,7 +33,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="allClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="TCj-WS-Qin"/>
+                                            <action selector="allTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Z6N-3k-Lhx"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5LG-Cv-zg7">
@@ -51,7 +51,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <action selector="publicTransportClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qza-A4-sjK"/>
+                                            <action selector="publicTransportTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="b9r-Gr-cw4"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfV-Py-SiZ">
@@ -69,7 +69,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <action selector="bikeSharingClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Zgq-NG-rRg"/>
+                                            <action selector="bikeSharingTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="yX1-eK-8zO"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFJ-ze-iaP">
@@ -87,7 +87,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <action selector="privateBikeClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="vFg-Ga-6L4"/>
+                                            <action selector="privateBikeTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="EuM-8I-2l9"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aho-yv-ly6">
@@ -105,7 +105,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <action selector="taxiClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="gkn-Ei-v3X"/>
+                                            <action selector="taxiTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6Ss-iO-jVN"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIE-GE-l2q">
@@ -123,7 +123,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <action selector="carSharingClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="A1I-bg-vf5"/>
+                                            <action selector="carSharingTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="u2U-VY-wBj"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -155,7 +155,7 @@
                                     </mask>
                                 </variation>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOZ-yK-Dau">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOZ-yK-Dau" userLabel="Current Location">
                                 <rect key="frame" x="0.0" y="555" width="51" height="45"/>
                                 <color key="backgroundColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <constraints>
@@ -164,7 +164,7 @@
                                 </constraints>
                                 <state key="normal" image="Location Arrow.png"/>
                                 <connections>
-                                    <action selector="currentLoctationClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="QL5-on-4TJ"/>
+                                    <action selector="currentLoctationTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="uBO-4K-E7I"/>
                                 </connections>
                             </button>
                         </subviews>
