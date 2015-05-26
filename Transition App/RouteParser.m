@@ -20,7 +20,7 @@
     
     for (NSDictionary *routeDict in json[@"routes"]) {
         Route *route = [Route new];
-        route.type = routeDict[@"type"];
+        route.transportType = [route assignTransportationTypeFromString:routeDict[@"type"]];
         route.provider = routeDict[@"provider"];
         route.properties = routeDict[@"properties"];
         route.price = routeDict[@"price"];

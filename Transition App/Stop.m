@@ -28,7 +28,7 @@
 }
 
 -(NSString *)subtitle {
-    return _route.type;
+    return nil;
 }
 
 -(CLLocationCoordinate2D)coordinate {

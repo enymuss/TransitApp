@@ -10,11 +10,21 @@
 
 @interface Route : NSObject
 
-@property (nonatomic) NSString* type;
+typedef NS_ENUM(NSUInteger, TrsansportationType) {
+    NONE,
+    PUBLIC_TRANSPORT,
+    CAR_SHARING,
+    PRIVATE_BIKE,
+    BIKE_SHARING,
+    TAXI
+};
+
+@property (nonatomic) TrsansportationType transportType;
 @property (nonatomic) NSString* provider;
 @property (nonatomic) NSMutableArray* segments;
 @property (nonatomic) NSDictionary* properties;
 @property (nonatomic) NSDictionary* price;
 
+-(TrsansportationType) assignTransportationTypeFromString:(NSString *)string;
 
 @end

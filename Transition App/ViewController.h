@@ -13,5 +13,11 @@
 
 @property (weak, nonatomic) IBOutlet MKMapView* mapView;
 
+- (IBAction)publicTransportClicked:(UIBarButtonItem *)sender;
+- (IBAction)bikeSharingClicked:(UIBarButtonItem *)sender;
+- (IBAction)privateBikeClicked:(UIBarButtonItem *)sender;
+- (IBAction)taxiClicked:(UIBarButtonItem *)sender;
+
+
 @end
 

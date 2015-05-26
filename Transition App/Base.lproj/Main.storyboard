@@ -20,13 +20,29 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jGg-BH-Bll">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem title="Public Transport" id="cLD-7L-Cik" userLabel="Public Transport"/>
+                                    <barButtonItem title="Public Transport" id="cLD-7L-Cik" userLabel="Public Transport">
+                                        <connections>
+                                            <action selector="publicTransportClicked:" destination="vXZ-lx-hvc" id="1Rl-gw-HPM"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem width="7" style="plain" systemItem="fixedSpace" id="SQT-mY-Fdr"/>
-                                    <barButtonItem title="Bike Sharing" id="XQM-CM-87h" userLabel="Bike Sharing"/>
+                                    <barButtonItem title="Bike Sharing" id="XQM-CM-87h" userLabel="Bike Sharing">
+                                        <connections>
+                                            <action selector="bikeSharingClicked:" destination="vXZ-lx-hvc" id="szw-qC-Gxr"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem width="7" style="plain" systemItem="fixedSpace" id="ANz-Pz-6bf"/>
-                                    <barButtonItem title="Taxi" id="wdn-de-okg" userLabel="Taxi"/>
+                                    <barButtonItem title="Private Bike" id="L8c-aw-ht9" userLabel="Private Bike">
+                                        <connections>
+                                            <action selector="privateBikeClicked:" destination="vXZ-lx-hvc" id="fCH-8N-Gsk"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem width="7" style="plain" systemItem="fixedSpace" id="K5e-oU-sWF"/>
-                                    <barButtonItem title="Private Bike" id="L8c-aw-ht9" userLabel="Private Bike"/>
+                                    <barButtonItem title="Taxi" id="wdn-de-okg" userLabel="Taxi">
+                                        <connections>
+                                            <action selector="taxiClicked:" destination="vXZ-lx-hvc" id="QLc-yq-PJw"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5rb-sE-SKu">
