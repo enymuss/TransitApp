@@ -11,25 +11,18 @@
 
 @implementation Segment
 
--(NSArray *)segmentsFromRoute:(Route *)route {
-    NSMutableArray *segmentsArray = [NSMutableArray new];
-    
-    for (NSDictionary *segmentsDict in route.segments) {
-        Segment *segment = [Segment new];
-        
-        segment.name = segmentsDict[@"name"];
-        segment.numberStops = segmentsDict[@"num_stops"];
-        segment.stops = segmentsDict[@"stops"];
-        segment.travelMode = segmentsDict[@"travel_mode"];
-        segment.segmentDescription = segmentsDict[@"description"];
-        segment.color = segmentsDict[@"color"];
-        segment.iconURL = segmentsDict[@"icon_url"];
-        segment.polyline = segmentsDict[@"polyline"];
-        
-        [segmentsArray addObject:segment];
+-(id)initWithDictionary:(NSDictionary *)dict {
+    if ((self = [super init])) {
+        self.name = dict[@"name"];
+        self.numberStops = dict[@"num_stops"];
+        self.stops = dict[@"stops"];
+        self.travelMode = dict[@"travel_mode"];
+        self.segmentDescription = dict[@"description"];
+        self.color = dict[@"color"];
+        self.iconURL = dict[@"icon_url"];
+        self.polyline = dict[@"polyline"];
     }
-    
-    return segmentsArray;
+    return  self;
 }
 
 @end

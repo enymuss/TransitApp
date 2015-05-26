@@ -1,30 +1,24 @@
 //
-//  Locations.m
+//  Stops.m
 //  Transition App
 //
-//  Created by Richard Szczerba on 25/05/15.
+//  Created by Richard Szczerba on 22/05/15.
 //  Copyright (c) 2015 Richard Szczerba. All rights reserved.
 //
 
-#import "Locations.h"
+#import "Stop.h"
 
-@interface Locations ()
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *address;
-@property (nonatomic, assign) CLLocationCoordinate2D theCoordinate;
-@end
+@implementation Stop
 
-@implementation Locations
-
--(id)initWithName:(NSString *)name address:(NSString *)address coordinate:(CLLocationCoordinate2D)coordinate {
+-(id)initWithName:(NSString *)name dateTime:(NSString *)date coordinate:(CLLocationCoordinate2D)coordinate {
     if ((self = [super init])) {
         if ([name isKindOfClass:[NSString class]]) {
             self.name = name;
         } else {
             self.name = @"Unknown";
         }
-        self.address = address;
-        self.theCoordinate = coordinate;
+        self.coordinate = coordinate;
+        self.dateTime = date;
     }
     return self;
 }
@@ -34,11 +28,11 @@
 }
 
 -(NSString *)subtitle {
-    return _address;
+    return _route.type;
 }
 
 -(CLLocationCoordinate2D)coordinate {
-    return _theCoordinate;
+    return _coordinate;
 }
 
 -(MKMapItem *)mapItem {

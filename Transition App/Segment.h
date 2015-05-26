@@ -21,5 +21,6 @@
 @property (nonatomic) NSString* iconURL;
 @property (nonatomic) NSString* polyline;
 
--(NSArray *) segmentsFromRoute:(Route *) route;
+-(id) initWithDictionary:(NSDictionary *)dict;
+
 @end

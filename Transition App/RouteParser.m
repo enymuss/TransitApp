@@ -9,7 +9,7 @@
 #import "RouteParser.h"
 #import "Route.h"
 #import "Segment.h"
-#import "Stops.h"
+#import "Stop.h"
 
 @implementation RouteParser
 
@@ -27,26 +27,23 @@
         
         NSMutableArray *segmentsArray = [NSMutableArray new];
         for (NSDictionary *segmentsDict in routeDict[@"segments"]) {
-            Segment *segment = [Segment new];
-            
-            segment.name = segmentsDict[@"name"];
-            segment.numberStops = segmentsDict[@"num_stops"];
-            segment.stops = segmentsDict[@"stops"];
-            segment.travelMode = segmentsDict[@"travel_mode"];
-            segment.segmentDescription = segmentsDict[@"description"];
-            segment.color = segmentsDict[@"color"];
-            segment.iconURL = segmentsDict[@"icon_url"];
-            segment.polyline = segmentsDict[@"polyline"];
+            Segment *segment = [[Segment alloc] initWithDictionary:segmentsDict];
             
             NSMutableArray *stopsArray = [NSMutableArray new];
             for (NSDictionary *stopsDict in segmentsDict[@"stops"]) {
-                Stops *stop = [Stops new];
+                NSString *name = stopsDict[@"name"];
+                NSString *date = stopsDict[@"datetime"];
                 
-                stop.lat = stopsDict[@"lat"];
-                stop.lng = stopsDict[@"lng"];
-                stop.dateTime = stopsDict[@"datetime"];
-                stop.name = stopsDict[@"name"];
+                NSNumber* lat = stopsDict[@"lat"];
+                NSNumber* lng = stopsDict[@"lng"];
+                CLLocationCoordinate2D coordinate;
+                coordinate.latitude = lat.doubleValue;
+                coordinate.longitude = lng.doubleValue;
+                
+                Stop *stop = [[Stop alloc] initWithName:name dateTime:date coordinate:coordinate];
+                
                 stop.properties = stopsDict[@"properties"];
+                stop.route = route;
                 
                 [stopsArray addObject:stop];
             }

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,13 +17,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jGg-BH-Bll">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jGg-BH-Bll">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem title="Item" id="cLD-7L-Cik"/>
+                                    <barButtonItem title="Public Transport" id="cLD-7L-Cik" userLabel="Public Transport"/>
+                                    <barButtonItem width="7" style="plain" systemItem="fixedSpace" id="SQT-mY-Fdr"/>
+                                    <barButtonItem title="Bike Sharing" id="XQM-CM-87h" userLabel="Bike Sharing"/>
+                                    <barButtonItem width="7" style="plain" systemItem="fixedSpace" id="ANz-Pz-6bf"/>
+                                    <barButtonItem title="Taxi" id="wdn-de-okg" userLabel="Taxi"/>
+                                    <barButtonItem width="7" style="plain" systemItem="fixedSpace" id="K5e-oU-sWF"/>
+                                    <barButtonItem title="Private Bike" id="L8c-aw-ht9" userLabel="Private Bike"/>
                                 </items>
                             </toolbar>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5rb-sE-SKu">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5rb-sE-SKu">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                                 <connections>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="dsr-dO-TWb"/>
@@ -30,6 +37,15 @@
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="jGg-BH-Bll" secondAttribute="trailing" constant="-16" id="HTE-dy-R2c"/>
+                            <constraint firstItem="5rb-sE-SKu" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="I8W-0g-beA"/>
+                            <constraint firstItem="jGg-BH-Bll" firstAttribute="top" secondItem="5rb-sE-SKu" secondAttribute="bottom" id="Pax-gU-2wG"/>
+                            <constraint firstItem="5rb-sE-SKu" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="WAv-41-nIc"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="jGg-BH-Bll" secondAttribute="bottom" id="h8v-63-uIa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5rb-sE-SKu" secondAttribute="trailing" constant="-16" id="hOT-6q-IV9"/>
+                            <constraint firstItem="jGg-BH-Bll" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="tb4-a6-fit"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="5rb-sE-SKu" id="WWW-I9-868"/>

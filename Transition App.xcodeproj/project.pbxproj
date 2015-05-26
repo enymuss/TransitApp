@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		C536EE641B13425600A1490D /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = C536EE611B13425600A1490D /* Route.m */; };
 		C536EE651B13425600A1490D /* Segment.m in Sources */ = {isa = PBXBuildFile; fileRef = C536EE621B13425600A1490D /* Segment.m */; };
-		C536EE661B13425600A1490D /* Stops.m in Sources */ = {isa = PBXBuildFile; fileRef = C536EE631B13425600A1490D /* Stops.m */; };
-		C536EE691B1342E900A1490D /* Locations.m in Sources */ = {isa = PBXBuildFile; fileRef = C536EE681B1342E900A1490D /* Locations.m */; };
+		C536EE661B13425600A1490D /* Stop.m in Sources */ = {isa = PBXBuildFile; fileRef = C536EE631B13425600A1490D /* Stop.m */; };
 		C54D98201B0FA9FA00282DC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C54D981F1B0FA9FA00282DC5 /* main.m */; };
 		C54D98231B0FA9FA00282DC5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C54D98221B0FA9FA00282DC5 /* AppDelegate.m */; };
 		C54D98261B0FA9FA00282DC5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C54D98251B0FA9FA00282DC5 /* ViewController.m */; };
@@ -36,9 +35,7 @@
 /* Begin PBXFileReference section */
 		C536EE611B13425600A1490D /* Route.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Route.m; sourceTree = "<group>"; };
 		C536EE621B13425600A1490D /* Segment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Segment.m; sourceTree = "<group>"; };
-		C536EE631B13425600A1490D /* Stops.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stops.m; sourceTree = "<group>"; };
-		C536EE671B1342E900A1490D /* Locations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Locations.h; sourceTree = "<group>"; };
-		C536EE681B1342E900A1490D /* Locations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Locations.m; sourceTree = "<group>"; };
+		C536EE631B13425600A1490D /* Stop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stop.m; sourceTree = "<group>"; };
 		C54D981A1B0FA9FA00282DC5 /* Transition App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Transition App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C54D981E1B0FA9FA00282DC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C54D981F1B0FA9FA00282DC5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -58,7 +55,7 @@
 		C54D98481B0FB5AE00282DC5 /* Route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Route.h; sourceTree = "<group>"; };
 		C54D984B1B0FB8E100282DC5 /* RouteParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteParserTests.m; sourceTree = "<group>"; };
 		C54D984D1B0FBB7300282DC5 /* Segment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Segment.h; sourceTree = "<group>"; };
-		C54D98501B0FBE0C00282DC5 /* Stops.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stops.h; sourceTree = "<group>"; };
+		C54D98501B0FBE0C00282DC5 /* Stop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stop.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,16 +103,14 @@
 				C54D98221B0FA9FA00282DC5 /* AppDelegate.m */,
 				C54D98241B0FA9FA00282DC5 /* ViewController.h */,
 				C54D98251B0FA9FA00282DC5 /* ViewController.m */,
-				C536EE671B1342E900A1490D /* Locations.h */,
-				C536EE681B1342E900A1490D /* Locations.m */,
 				C54D98451B0FB58600282DC5 /* RouteParser.h */,
 				C54D98461B0FB58600282DC5 /* RouteParser.m */,
 				C54D98481B0FB5AE00282DC5 /* Route.h */,
 				C536EE611B13425600A1490D /* Route.m */,
 				C54D984D1B0FBB7300282DC5 /* Segment.h */,
 				C536EE621B13425600A1490D /* Segment.m */,
-				C54D98501B0FBE0C00282DC5 /* Stops.h */,
-				C536EE631B13425600A1490D /* Stops.m */,
+				C54D98501B0FBE0C00282DC5 /* Stop.h */,
+				C536EE631B13425600A1490D /* Stop.m */,
 				C54D98271B0FA9FA00282DC5 /* Main.storyboard */,
 				C54D982A1B0FA9FA00282DC5 /* Images.xcassets */,
 				C54D982C1B0FA9FA00282DC5 /* LaunchScreen.xib */,
@@ -253,8 +248,7 @@
 			files = (
 				C536EE641B13425600A1490D /* Route.m in Sources */,
 				C54D98471B0FB58600282DC5 /* RouteParser.m in Sources */,
-				C536EE691B1342E900A1490D /* Locations.m in Sources */,
-				C536EE661B13425600A1490D /* Stops.m in Sources */,
+				C536EE661B13425600A1490D /* Stop.m in Sources */,
 				C54D98261B0FA9FA00282DC5 /* ViewController.m in Sources */,
 				C54D98231B0FA9FA00282DC5 /* AppDelegate.m in Sources */,
 				C54D98201B0FA9FA00282DC5 /* main.m in Sources */,
