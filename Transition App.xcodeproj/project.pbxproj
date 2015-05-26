@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5124F181B14ECDE0030874B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5124F171B14ECDE0030874B /* CoreLocation.framework */; };
+		C5124F1A1B14F11E0030874B /* berlin.gpx in Resources */ = {isa = PBXBuildFile; fileRef = C5124F191B14F11E0030874B /* berlin.gpx */; };
 		C536EE641B13425600A1490D /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = C536EE611B13425600A1490D /* Route.m */; };
 		C536EE651B13425600A1490D /* Segment.m in Sources */ = {isa = PBXBuildFile; fileRef = C536EE621B13425600A1490D /* Segment.m */; };
 		C536EE661B13425600A1490D /* Stop.m in Sources */ = {isa = PBXBuildFile; fileRef = C536EE631B13425600A1490D /* Stop.m */; };
@@ -20,6 +22,7 @@
 		C54D98441B0FAAF200282DC5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C54D98431B0FAAF200282DC5 /* MapKit.framework */; };
 		C54D98471B0FB58600282DC5 /* RouteParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C54D98461B0FB58600282DC5 /* RouteParser.m */; };
 		C54D984C1B0FB8E100282DC5 /* RouteParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C54D984B1B0FB8E100282DC5 /* RouteParserTests.m */; };
+		C5A53A861B14DB82003D024B /* Location Arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A53A851B14DB82003D024B /* Location Arrow.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C5124F171B14ECDE0030874B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C5124F191B14F11E0030874B /* berlin.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = berlin.gpx; sourceTree = "<group>"; };
 		C536EE611B13425600A1490D /* Route.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Route.m; sourceTree = "<group>"; };
 		C536EE621B13425600A1490D /* Segment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Segment.m; sourceTree = "<group>"; };
 		C536EE631B13425600A1490D /* Stop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stop.m; sourceTree = "<group>"; };
@@ -56,6 +61,7 @@
 		C54D984B1B0FB8E100282DC5 /* RouteParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteParserTests.m; sourceTree = "<group>"; };
 		C54D984D1B0FBB7300282DC5 /* Segment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Segment.h; sourceTree = "<group>"; };
 		C54D98501B0FBE0C00282DC5 /* Stop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stop.h; sourceTree = "<group>"; };
+		C5A53A851B14DB82003D024B /* Location Arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Location Arrow.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5124F181B14ECDE0030874B /* CoreLocation.framework in Frameworks */,
 				C54D98441B0FAAF200282DC5 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,7 +87,6 @@
 		C54D98111B0FA9FA00282DC5 = {
 			isa = PBXGroup;
 			children = (
-				C54D98431B0FAAF200282DC5 /* MapKit.framework */,
 				C54D981C1B0FA9FA00282DC5 /* Transition App */,
 				C54D98361B0FA9FA00282DC5 /* Transition AppTests */,
 				C54D981B1B0FA9FA00282DC5 /* Products */,
@@ -122,6 +128,10 @@
 		C54D981D1B0FA9FA00282DC5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C5124F171B14ECDE0030874B /* CoreLocation.framework */,
+				C54D98431B0FAAF200282DC5 /* MapKit.framework */,
+				C5A53A851B14DB82003D024B /* Location Arrow.png */,
+				C5124F191B14F11E0030874B /* berlin.gpx */,
 				C54D981E1B0FA9FA00282DC5 /* Info.plist */,
 				C54D981F1B0FA9FA00282DC5 /* main.m */,
 			);
@@ -227,7 +237,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C54D98291B0FA9FA00282DC5 /* Main.storyboard in Resources */,
+				C5A53A861B14DB82003D024B /* Location Arrow.png in Resources */,
 				C54D982E1B0FA9FA00282DC5 /* LaunchScreen.xib in Resources */,
+				C5124F1A1B14F11E0030874B /* berlin.gpx in Resources */,
 				C54D982B1B0FA9FA00282DC5 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

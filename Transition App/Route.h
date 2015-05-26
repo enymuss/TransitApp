@@ -11,7 +11,7 @@
 @interface Route : NSObject
 
 typedef NS_ENUM(NSUInteger, TrsansportationType) {
-    NONE,
+    ALL,
     PUBLIC_TRANSPORT,
     CAR_SHARING,
     PRIVATE_BIKE,

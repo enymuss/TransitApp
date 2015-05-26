@@ -23,7 +23,7 @@
     } else if ([string isEqualToString:@"taxi"]){
         type = TAXI;
     } else {
-        type = NONE;
+        type = ALL;
     }
     return type;
 }
