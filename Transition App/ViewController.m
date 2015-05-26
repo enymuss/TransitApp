@@ -46,6 +46,12 @@
     [self updateMapView];
 }
 
+- (IBAction)carSharingClicked:(id)sender {
+}
+
+- (IBAction)carShringClicked:(id)sender {
+}
+
 -(void) updateMapView {
     [self plotPostions:self.routesArray];
 }

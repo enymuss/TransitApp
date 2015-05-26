@@ -17,50 +17,157 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jGg-BH-Bll">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                                <items>
-                                    <barButtonItem title="Public Transport" id="cLD-7L-Cik" userLabel="Public Transport">
-                                        <connections>
-                                            <action selector="publicTransportClicked:" destination="vXZ-lx-hvc" id="1Rl-gw-HPM"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem width="7" style="plain" systemItem="fixedSpace" id="SQT-mY-Fdr"/>
-                                    <barButtonItem title="Bike Sharing" id="XQM-CM-87h" userLabel="Bike Sharing">
-                                        <connections>
-                                            <action selector="bikeSharingClicked:" destination="vXZ-lx-hvc" id="szw-qC-Gxr"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem width="7" style="plain" systemItem="fixedSpace" id="ANz-Pz-6bf"/>
-                                    <barButtonItem title="Private Bike" id="L8c-aw-ht9" userLabel="Private Bike">
-                                        <connections>
-                                            <action selector="privateBikeClicked:" destination="vXZ-lx-hvc" id="fCH-8N-Gsk"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem width="7" style="plain" systemItem="fixedSpace" id="K5e-oU-sWF"/>
-                                    <barButtonItem title="Taxi" id="wdn-de-okg" userLabel="Taxi">
-                                        <connections>
-                                            <action selector="taxiClicked:" destination="vXZ-lx-hvc" id="QLc-yq-PJw"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5rb-sE-SKu">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                                 <connections>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="dsr-dO-TWb"/>
                                 </connections>
                             </mapView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucI-oh-SsG">
+                                <rect key="frame" x="0.0" y="555" width="600" height="45"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfV-Py-SiZ">
+                                        <rect key="frame" x="244" y="0.0" width="98" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="HC6-lW-9Fy"/>
+                                            <constraint firstAttribute="height" constant="45" id="bYV-Aa-Lbl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Bike Sharing">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="HC6-lW-9Fy"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="bikeSharingClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Zgq-NG-rRg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFJ-ze-iaP">
+                                        <rect key="frame" x="144" y="0.0" width="92" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="Jqn-Z3-RX8"/>
+                                            <constraint firstAttribute="height" constant="33" id="eBU-gb-ffW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Private Bike">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="eBU-gb-ffW"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="privateBikeClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="vFg-Ga-6L4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aho-yv-ly6">
+                                        <rect key="frame" x="455" y="0.0" width="30" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="fis-NY-2tA"/>
+                                            <constraint firstAttribute="height" constant="30" id="y2V-GD-XhP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Taxi">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="y2V-GD-XhP"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="taxiClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="gkn-Ei-v3X"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIE-GE-l2q">
+                                        <rect key="frame" x="353" y="0.0" width="91" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="33" id="Xjy-up-6rf"/>
+                                            <constraint firstAttribute="height" constant="45" id="zl9-qf-96m"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Car Sharing">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Xjy-up-6rf"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="carSharingClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="A1I-bg-vf5"/>
+                                            <action selector="carShringClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="JQz-ts-omi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z1Y-bC-M9f">
+                                        <rect key="frame" x="496" y="0.0" width="30" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="liT-YM-XoD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="All">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5LG-Cv-zg7">
+                                        <rect key="frame" x="8" y="0.0" width="125" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="3YT-sQ-qQ2"/>
+                                            <constraint firstAttribute="height" constant="33" id="PVy-Zl-ylZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Public Transport">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="PVy-Zl-ylZ"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="publicTransportClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qza-A4-sjK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="mfV-Py-SiZ" firstAttribute="top" secondItem="ucI-oh-SsG" secondAttribute="top" id="2jd-16-ROA"/>
+                                    <constraint firstItem="mfV-Py-SiZ" firstAttribute="leading" secondItem="oFJ-ze-iaP" secondAttribute="trailing" constant="8" id="Aiw-fh-ih7"/>
+                                    <constraint firstItem="5LG-Cv-zg7" firstAttribute="top" secondItem="ucI-oh-SsG" secondAttribute="top" id="B6z-Zl-JLf"/>
+                                    <constraint firstAttribute="bottom" secondItem="pIE-GE-l2q" secondAttribute="bottom" id="ED7-QI-A58"/>
+                                    <constraint firstItem="5LG-Cv-zg7" firstAttribute="centerY" secondItem="ucI-oh-SsG" secondAttribute="centerY" id="Ikp-BJ-liO"/>
+                                    <constraint firstAttribute="bottom" secondItem="oFJ-ze-iaP" secondAttribute="bottom" id="JpQ-ln-6fF"/>
+                                    <constraint firstItem="Z1Y-bC-M9f" firstAttribute="top" secondItem="ucI-oh-SsG" secondAttribute="top" id="Lo1-RD-ycP"/>
+                                    <constraint firstAttribute="bottom" secondItem="Z1Y-bC-M9f" secondAttribute="bottom" id="OjM-Bf-4ca"/>
+                                    <constraint firstAttribute="bottom" secondItem="Aho-yv-ly6" secondAttribute="bottom" id="QQU-8n-BQn"/>
+                                    <constraint firstItem="pIE-GE-l2q" firstAttribute="top" secondItem="ucI-oh-SsG" secondAttribute="top" id="WuB-3f-BJi"/>
+                                    <constraint firstAttribute="trailing" secondItem="Z1Y-bC-M9f" secondAttribute="trailing" constant="11" id="bJd-H9-frj"/>
+                                    <constraint firstItem="5LG-Cv-zg7" firstAttribute="leading" secondItem="ucI-oh-SsG" secondAttribute="leading" constant="8" id="cWe-3K-clF"/>
+                                    <constraint firstItem="oFJ-ze-iaP" firstAttribute="top" secondItem="ucI-oh-SsG" secondAttribute="top" id="dOd-FB-92U"/>
+                                    <constraint firstAttribute="bottom" secondItem="5LG-Cv-zg7" secondAttribute="bottom" id="def-uj-wlD"/>
+                                    <constraint firstAttribute="bottom" secondItem="mfV-Py-SiZ" secondAttribute="bottom" id="h4h-n4-Zsg"/>
+                                    <constraint firstItem="oFJ-ze-iaP" firstAttribute="leading" secondItem="5LG-Cv-zg7" secondAttribute="trailing" constant="11" id="hLY-t6-FdD"/>
+                                    <constraint firstItem="pIE-GE-l2q" firstAttribute="leading" secondItem="mfV-Py-SiZ" secondAttribute="trailing" constant="11" id="ood-Q9-uXH"/>
+                                    <constraint firstItem="Aho-yv-ly6" firstAttribute="top" secondItem="ucI-oh-SsG" secondAttribute="top" id="p5x-fL-G0t"/>
+                                    <constraint firstItem="Z1Y-bC-M9f" firstAttribute="leading" secondItem="Aho-yv-ly6" secondAttribute="trailing" constant="11" id="sLq-gL-PEf"/>
+                                    <constraint firstItem="Aho-yv-ly6" firstAttribute="leading" secondItem="pIE-GE-l2q" secondAttribute="trailing" constant="11" id="xv6-vy-uNd"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="jGg-BH-Bll" secondAttribute="trailing" constant="-16" id="HTE-dy-R2c"/>
+                            <constraint firstItem="ucI-oh-SsG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="2jd-Au-dcr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5rb-sE-SKu" secondAttribute="trailing" constant="-16" id="3s8-a1-hoA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ucI-oh-SsG" secondAttribute="trailing" constant="-16" id="7VD-O5-Mtj"/>
                             <constraint firstItem="5rb-sE-SKu" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="I8W-0g-beA"/>
-                            <constraint firstItem="jGg-BH-Bll" firstAttribute="top" secondItem="5rb-sE-SKu" secondAttribute="bottom" id="Pax-gU-2wG"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ucI-oh-SsG" secondAttribute="bottom" id="QKj-c5-rrK"/>
                             <constraint firstItem="5rb-sE-SKu" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="WAv-41-nIc"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="jGg-BH-Bll" secondAttribute="bottom" id="h8v-63-uIa"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="5rb-sE-SKu" secondAttribute="bottom" constant="44" id="fs3-uE-h8f"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5rb-sE-SKu" secondAttribute="trailing" constant="-16" id="hOT-6q-IV9"/>
-                            <constraint firstItem="jGg-BH-Bll" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="tb4-a6-fit"/>
+                            <constraint firstItem="5rb-sE-SKu" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="xph-dx-B6E"/>
                         </constraints>
                     </view>
                     <connections>
