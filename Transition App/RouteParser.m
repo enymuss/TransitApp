@@ -11,6 +11,7 @@
 @implementation RouteParser
 
 - (NSArray *)routeFromJSONData:(NSData *)JSONData {
+    //convert JSON data into objects with properties
     id JSON = [NSJSONSerialization JSONObjectWithData:JSONData options:0 error:nil];
     
     NSMutableArray *routes = [NSMutableArray new];

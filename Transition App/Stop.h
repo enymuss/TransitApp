@@ -19,6 +19,4 @@
 
 - (id)initWithName:(NSString *)name dateTime:(NSString *)date coordinate:(CLLocationCoordinate2D)coordinate;
 
-- (MKMapItem *)mapItem;
-
 @end

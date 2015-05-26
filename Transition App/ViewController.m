@@ -29,29 +29,32 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     
+    // set zoomlocation near center of all data points
     CLLocationCoordinate2D zoomlocation;
     zoomlocation.latitude = 52.519978;
-    zoomlocation.longitude = 13.401341;
+    zoomlocation.longitude = 13.391341;
     
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomlocation, VIEW_REGION, VIEW_REGION);
     
-    [self.locationManager startUpdatingLocation];
-    
     [self.mapView setRegion:viewRegion animated:YES];
     
-    NSString *JSONURLString = @"https://gist.githubusercontent.com/sdoward/d1fc5662b6497a04a3c3/raw/484128fab9d10ab2b9ec320f7aece2f2fb099052/Allryder%20Response";
-    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString: JSONURLString]];
-    _routesArray = [[RouteParser new] routeFromJSONData:data];
-    [self plotStops:_routesArray];
+    [self.locationManager startUpdatingLocation];
+    [self displayJSONData];
+    
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (void)updateMapView {
+#pragma mark - Private Methods
+
+- (void)displayJSONData {
+    NSString *JSONURLString = @"https://gist.githubusercontent.com/sdoward/d1fc5662b6497a04a3c3/raw/484128fab9d10ab2b9ec320f7aece2f2fb099052/Allryder%20Response";
+    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString: JSONURLString]];
+    _routesArray = [[RouteParser new] routeFromJSONData:data];
+    
     [self plotStops:_routesArray];
 }
 
@@ -61,7 +64,8 @@
     }
     
     for (Route *route in routesArray) {
-        if (_transportTypeSelected == route.transportType||
+        //add pins only for user selected transport type stops
+        if (_transportTypeSelected == route.transportType ||
             _transportTypeSelected == ALL) {
             for (Segment *segment in route.segments) {
                 for (Stop *stop in segment.stops) {
@@ -76,6 +80,7 @@
     //remove previous routes
     [self.mapView removeOverlays:self.mapView.overlays];
     
+    //request directions from current location to pin tapped
     MKDirectionsRequest *directionsRequest = [[MKDirectionsRequest alloc] init];
     MKPlacemark *placemark = [[MKPlacemark alloc] initWithPlacemark:_thePlacemark];
     [directionsRequest setSource:[MKMapItem mapItemForCurrentLocation]];
@@ -87,11 +92,24 @@
         if (error) {
             NSLog(@"Error %@", error.description);
         } else {
+            // display route on map
             _routeDetails = response.routes.lastObject;
             [self.mapView addOverlay:_routeDetails.polyline];
         }
     }];
     
+}
+- (void) requestUserLocation {
+    self.locationManager = [CLLocationManager new];
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    [self.locationManager requestWhenInUseAuthorization];
+}
+
+- (void)updateMapView {
+    // re-add pins based on user choice
+    [self plotStops:_routesArray];
 }
 
 #pragma mark - CLLocationManagerDelegate
@@ -133,6 +151,7 @@
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
     
     if (self.mapView.showsUserLocation) {
+        //turn lat and lng of pin into placemark data
         CLGeocoder *geocoder = [[CLGeocoder alloc] init];
         CLLocation *location = [[CLLocation alloc] initWithLatitude:view.annotation.coordinate.latitude
                                                           longitude:view.annotation.coordinate.longitude];
@@ -154,8 +173,9 @@
 
 #pragma mark - UIAlertViewDelegate
 
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     NSString *buttonTitle = [alertView buttonTitleAtIndex:buttonIndex];
+    
     if ([buttonTitle isEqualToString:@"Get Location"]) {
         [self requestUserLocation];
     }
@@ -211,14 +231,6 @@
     if (self.mapView.showsUserLocation) {
         [self.mapView setCenterCoordinate:self.mapView.userLocation.coordinate animated:YES];
     }
-}
-
-- (void) requestUserLocation {
-    self.locationManager = [CLLocationManager new];
-    self.locationManager.delegate = self;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    
-    [self.locationManager requestWhenInUseAuthorization];
 }
 
 @end
